@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <title>Análise de Sentimentos</title>
+</head>
+<body>
+    <style>
+        /* Organização e Box Model */
+body {
+    font-family: sans-serif;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+    max-width: 500px;
+    padding: 20px;
+    border: 2px solid #ccc; /* Border */
+    border-radius: 8px;
+}
+
+.entrada-texto {
+    padding: 10px; /* Padding para conforto */
+    min-height: 100px;
+    border: 1px solid #aaa;
+}
+
+/* Pseudo-classes */
+.entrada-texto:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+.btn-analisar {
+    padding: 12px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.btn-analisar:hover {
+    background-color: #0056b3;
+}
+
+.btn-analisar:active {
+    transform: scale(0.98);
+}
+
+/* Classes de Estado */
+.resultado {
+    padding: 15px;
+    border-left: 5px solid gray;
+}
+
+.positivo { border-left-color: green; background: #e8f5e9; }
+.negativo { border-left-color: red; background: #ffebee; }
+.neutro { border-left-color: gray; background: #f5f5f5; }
+
+/* Responsividade */
+@media (max-width: 480px) {
+    .container {
+        padding: 10px;
+    }
+}
+    </style>
+
+    <main class="container">
+        <h1>Análise de Sentimentos</h1>
+        
+        <textarea placeholder="Digite seu texto aqui..." class="entrada-texto"></textarea>
+        
+        <button class="btn-analisar">Analisar Sentimento</button>
+        
+        <div class="resultado neutro">
+            Resultado: Aguardando análise...
+        </div>
+    </main>
+
+</body>
+</html>

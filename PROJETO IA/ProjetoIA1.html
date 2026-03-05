@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercício: O Mundo das Flores em Azul</title>
+    <style>
+        /* --- ESTILOS CSS --- */
+
+        /* 1. SELETOR POR ELEMENTO (Peso 1) */
+        h2 {
+            color: #4682B4; /* Azul Aço para os subtítulos */
+            font-family: Arial, sans-serif;
+        }
+
+        p {
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* 2. SELETOR POR ID (Peso 100 - Maior prioridade) */
+        #titulo-floral {
+            color: #00008B; /* Azul Escuro (Diferente dos subtítulos) */
+            text-align: center;
+            border-bottom: 2px solid #00008B;
+        }
+
+        /* 3. SELETOR POR CLASSE (Peso 10 - Média prioridade) */
+        .destaque-visual {
+            background-color: #E3F2FD; /* Azul clarinho de fundo */
+            padding: 10px;
+            border-left: 5px solid #2196F3; /* Azul vibrante na borda */
+            font-weight: bold;
+        }
+
+        /* EXPLICAÇÃO DE ESPECIFICIDADE:
+           O seletor que possui a MAIOR PRIORIDADE é o ID (#titulo-floral).
+           
+           Por que? O CSS utiliza um sistema de pontos para resolver conflitos:
+           - ID: 100 pontos
+           - Classe: 10 pontos
+           - Elemento: 1 ponto
+           Como o ID tem a maior pontuação, as regras definidas nele sempre 
+           vencerão as regras de classes ou elementos.
+        */
+    </style>
+</head>
+<body>
+
+    <h1 id="titulo-floral">A Linguagem das Flores</h1>
+
+    <h2>O Girassol</h2>
+    <p>O girassol é conhecido por sua beleza vibrante e por seguir a trajetória do sol durante o dia.</p>
+
+    <h2>A Lavanda</h2>
+    <p class="destaque-visual">Além de sua cor única, a lavanda é mundialmente famosa por suas propriedades relaxantes e aromáticas.</p>
+    
+    <p>Cultivar flores em casa ajuda a purificar o ar e traz uma sensação de paz para o ambiente.</p>
+
+</body>
+</html>
