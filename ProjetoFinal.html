@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Análise de Sentimentos</title>
+    <style>
+        /* CSS Integrado */
+        body { font-family: sans-serif; display: flex; justify-content: center; padding: 20px; }
+        .container { display: flex; flex-direction: column; gap: 15px; width: 100%; max-width: 500px; padding: 20px; border: 2px solid #ccc; border-radius: 8px; }
+        .entrada-texto { padding: 10px; min-height: 100px; border: 1px solid #aaa; }
+        .btn-analisar { padding: 12px; background-color: #007bff; color: white; border: none; cursor: pointer; }
+        .btn-analisar:hover { background-color: #0056b3; }
+        
+        /* Classes de Resultado */
+        .resultado { padding: 15px; border-left: 5px solid gray; margin-top: 10px; }
+        .positivo { border-left-color: green; background: #e8f5e9; }
+        .negativo { border-left-color: red; background: #ffebee; }
+        .neutro { border-left-color: gray; background: #f5f5f5; }
+    </style>
+</head>
+<body>
+
+    <main class="container">
+        <h1>Análise de Sentimentos</h1>
+        
+        <textarea id="textoUsuario" placeholder="Digite seu texto aqui..." class="entrada-texto"></textarea>
+        
+        <button class="btn-analisar" onclick="analisar()">Analisar Sentimento</button>
+        
+        <div id="areaResultado" class="resultado neutro">
+            Resultado: Aguardando análise...
+        </div>
+    </main>
+
+    <script>
+        function analisar() {
+            const texto = document.getElementById('textoUsuario').value.toLowerCase();
+            const divResultado = document.getElementById('areaResultado');
+            
+            // Lógica simples de análise
+            if (texto.includes('feliz') || texto.includes('bom')) {
+                divResultado.className = 'resultado positivo';
+                divResultado.innerText = 'Sentimento: Positivo! 😊';
+            } else if (texto.includes('triste') || texto.includes('ruim')) {
+                divResultado.className = 'resultado negativo';
+                divResultado.innerText = 'Sentimento: Negativo 😔';
+            } else {
+                divResultado.className = 'resultado neutro';
+                divResultado.innerText = 'Sentimento: Neutro 😐';
+            }
+        }
+    </script>
+</body>
+</html>
